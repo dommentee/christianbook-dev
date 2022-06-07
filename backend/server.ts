@@ -6,6 +6,10 @@
 //ts-node-dev
 //npm run dev for nodemon
 
+//get express server running
+//make product.json file into a route
+ 
+
 import express from 'express'
 
 
