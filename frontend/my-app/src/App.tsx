@@ -49,10 +49,6 @@ const App = () =>  {
         </div>
 
       </Router>
-      <div className='header'>
-
-      </div>
-      
     </div>
   );
 }
