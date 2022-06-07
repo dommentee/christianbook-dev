@@ -26,6 +26,7 @@ interface ProductsFile {//
 router.get('/:id', (req,res) => {
     const {id} = req.params;//setting the peramters I want 
     //read json file
+    //reference https://www.geeksforgeeks.org/creating-a-simple-json-based-api-using-node-js/
     const file = fs.readFileSync(path.resolve()+'/resources/products.json', 'utf-8') //to read file in utf-8 format
     const data = JSON.parse(file) as ProductsFile// reads as json object
     //for statement to loop through each proct till id matches 
