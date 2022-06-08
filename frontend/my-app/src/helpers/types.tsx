@@ -9,6 +9,6 @@ export interface Product {
 }
 
 export interface SearchedProductResponse {
-    products: Array<Product>
+    
 
 }

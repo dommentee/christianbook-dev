@@ -20,7 +20,16 @@ interface ProductsFile {//
     records: ProductRecord[]//is an array of products
 }
 
-
+// router.get('/', (req,res) => {
+//     const file = fs.readFileSync(path.resolve()+'/resources/products.json', 'utf-8') //to read file in utf-8 format
+//     const data = JSON.parse(file) as ProductsFile// reads as json object
+//     for(let i = 0; i < data.records.length; i++) {
+//         res.json(data.records[i])//respond with data
+//         return//end loop
+//     }
+//     //if no reconrds are found 
+//     res.status(404).end()
+// })
 
 //get route
 router.get('/:id', (req,res) => {

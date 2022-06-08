@@ -6,65 +6,56 @@
 //create form filed for search
 //connect submit with get route
 //display product if any
+//try not to pass props to routes.. beaces data be still be present
 
 
-//id to test "705255", 705071
+//id to test "705255",820657  
 
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
-//@ts-ignore
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-router-dom'
 //types for type checking 
 import {Product, SearchedProductResponse} from './helpers/types'
 import './App.scss';
+import Home from './pages/Home';
+import SearchResults from './pages/SearchResults';
+import SearchBar from './components/Searchbar';
 
 //set api 
 const API = 'http://localhost:3003/products/'
 const App = () =>  {
   //setting state for input
-  const [searchInput, setSearchInput] = useState('')
+  let [searchInput, setSearchInput] = useState('')
   //state of search results 
-  const [searchResults, setSearchResults] = useState<SearchedProductResponse>()
-
-  //state of product 
-  const [product, setProduct] = useState(null as any)
-
-  //search route 
-  const searchRequest = async (filter:any) => {
-    const response = await axios.get(API + filter)
-    setSearchResults(response.data)
-    return response.data
-  } 
+  const [searchResults, setSearchResults] = useState<Product>()  
 
   //handle search
-  const handleSearch = (e: any) => {
-    e.preventDefault()
-    searchRequest(`${searchInput}`)
-    
-    console.log(searchResults);
-  }
+  // const handleSearch = (e: any) => {
+  //   e.preventDefault()
+  //   searchRequest(`${searchInput}`)
+  //   console.log(searchResults);
+  // }
 
   useEffect(() => {
+    // getProducts()
   },[searchResults])
 
 
+
   return (
+  
     <div className="app">
-      <Router>
         <div className='header'>
           <Link to="/"><div className='homebutton'>Christianbook</div></Link>
-          <form onSubmit={handleSearch} className="search-form">
-            <input
-              type="search" onChange={(e: any) => setSearchInput(e.target.value)}
-              className="search-input"
-              placeholder='search product'
-              value={searchInput}
-            />
-            <input type="submit" value="search" className='search-button'/>
-          </form>
+          {/* <SearchBar handleSearch={handleSearch}/>//not working */}
         </div>
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/search/:id' element={<SearchResults />}></Route>
 
-      </Router>
+ 
+        </Routes>
+
     </div>
   );
 }

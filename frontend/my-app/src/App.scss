@@ -19,6 +19,8 @@
       background-color: rgba(227, 178, 119, 0.902);
       .homebutton {
         padding: 10px 0;
+        width: max-content;
+        margin: 0 0 4px 0;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         color: #1e5578e9;
       }
@@ -49,6 +51,9 @@
           }
         }
       }
+    }
+    .hero {
+      background-color: aqua;
     }
   }
 }

@@ -11,6 +11,7 @@
 
 import express from 'express'
 import productController from './controllers/products'
+import path from 'path'
 import cors, {CorsOptions} from 'cors'
 
 const app = express()
