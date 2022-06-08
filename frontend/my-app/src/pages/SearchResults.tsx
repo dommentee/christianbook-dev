@@ -25,7 +25,7 @@ const SearchResults = (props: any) => {
     
     return(
         <div className="container">
-            <h3>Results page</h3>
+            <h4>Findings</h4>
             <div className="product">
                 <div className="product-cover">
                     <img src={searchResults.image} width='300'/>
