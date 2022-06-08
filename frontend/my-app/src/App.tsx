@@ -47,7 +47,7 @@ const App = () =>  {
     <div className="app">
         <div className='header'>
           <Link to="/"><div className='homebutton'>Christianbook</div></Link>
-          {/* <SearchBar handleSearch={handleSearch}/>//not working */}
+          <SearchBar/>
         </div>
         <Routes>
           <Route path='/' element={<Home/>}></Route>

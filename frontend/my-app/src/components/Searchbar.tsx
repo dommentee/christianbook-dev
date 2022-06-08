@@ -1,10 +1,15 @@
 import React, {useState} from "react";
 import { useNavigate} from 'react-router-dom'
 
-const SearchBar = (props: any) => {
+const SearchBar = () => {
     const [searchInput, setSearchInput] = useState('')
+    const navagate = useNavigate()
+    const handleSearch = (e: any) => {
+        e.preventDefault()
+        navagate('/search/' + searchInput)
+    }
     return(
-        <form onSubmit={props.handleSearch} className="search-form">
+        <form onSubmit={handleSearch} className="search-form">
             <input
                 type="search" onChange={(e:any) => setSearchInput(e.target.value)}
                 className="search-input"
