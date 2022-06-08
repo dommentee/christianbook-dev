@@ -6,7 +6,7 @@
 //ts-node-dev
 //npm run dev for nodemon
 
-//get express server running
+//get express server running, npm start, npm run dev for developement
 //make product.json file into a route
 
 import express from 'express'
