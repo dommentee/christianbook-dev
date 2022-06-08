@@ -11,9 +11,16 @@
 
 import express from 'express'
 import productController from './controllers/products'
+import cors, {CorsOptions} from 'cors'
 
 const app = express()
 const PORT = 3003
+let whitelist = ['http://localhost:3000']
+var corsOptions: CorsOptions = {
+    credentials: true,
+    origin: whitelist
+}
+app.use(cors(corsOptions));
 
 app.use(express.json())
 

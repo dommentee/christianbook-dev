@@ -35,10 +35,9 @@ router.get('/:id', (req,res) => {
             res.json(data.records[i])//respond with data
             return//end loop 
         }
-        //if no reconrds are found 
-        res.status(404).end()
     }
-
+    //if no reconrds are found 
+    res.status(404).end()
 
 })
 
