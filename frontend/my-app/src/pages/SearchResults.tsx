@@ -2,6 +2,7 @@ import React,{useState, useEffect} from "react";
 import axios from 'axios'
 import {useParams} from 'react-router-dom'
 import {Product, SearchedProductResponse} from '../helpers/types'
+import '../pages/searchresults.scss'
 
 const SearchResults = (props: any) => {
     const params = useParams<{id:string}>()//params will awalys have a string for id
@@ -25,11 +26,21 @@ const SearchResults = (props: any) => {
     return(
         <div className="container">
             <h3>Results page</h3>
-           <h4>{searchResults.title}</h4>
+            <div className="product">
+                <div className="product-cover">
+                    <img src={searchResults.image} width='300'/>
+                </div>
+                <div className="product-info">
+                    <p className="title">{searchResults.title}</p>
+                    <p className="rating">Customer Rating: <span>{searchResults.customer_rating}</span></p>
+                    <p>{searchResults.isbn13}</p>
+                    <p>{searchResults.isbn}</p>
+                    <p>{searchResults.isbn13}</p>
 
+                    <a href={searchResults.link} target="_blank">buy now</a>
+                </div>
 
-            {/* <img src={props.SearchResults.image}/> */}
-
+            </div>
         </div>
     )
 }
