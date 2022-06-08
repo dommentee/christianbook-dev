@@ -13,3 +13,6 @@
   	I think I spent roughly 4 hours build and 6 hours  troubleshooting, catching errors, moving components to better use router-dom. If I had more time I would use it to write a route that also searched for title, design the layout and style more.
 * If you were to critique your code, what would you have to say about it?
   I think I could do what I its doing in simpler ways.
+
+* To build: sh build.sh
+* To run: sh run.sh
